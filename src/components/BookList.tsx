@@ -1,4 +1,9 @@
+// import { useEffect } from "react";
 import Book from "./Book";
+
+// interface Props {
+//   bookId : number
+// }
 
 const BookList = () => {
   // let filterValue = 0;
@@ -34,6 +39,7 @@ const BookList = () => {
             title={book.title}
             author={book.author}
             id={book.id}
+            getBook={showBook}
             key={book.id}
           />
         ))}
