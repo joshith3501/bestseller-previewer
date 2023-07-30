@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Book from "./Book";
 
-interface Props {
-  bookId : number
-}
+// interface Props {
+//   bookId : number
+// }
 
-const BookList = ({bookId} : Props) => {
+const BookList = () => {
   // let filterValue = 0;
 
   const bookData = [
@@ -29,22 +29,27 @@ const BookList = ({bookId} : Props) => {
     },
   ];
 
-  let filteredData = bookData.filter((book) => book.id === bookId);
-  useEffect(() => {
-  console.log(bookData.find((book) => book.id === bookId));
-}, [bookId]);
+//   let filteredData = bookData.filter((book) => book.id === bookId);
+//   useEffect(() => {
+//   console.log(bookData.find((book) => book.id === bookId));
+// }, [bookId]);
 
-  if(filteredData.length === 0) filteredData = [...bookData];
+//   if(filteredData.length === 0) filteredData = [...bookData];
+
+  const showBook = (id: number) => {
+    console.log(bookData.find((book) => book.id === id))
+  }
 
   return (
     <>
       <section className="book-list-container">
-        {filteredData.map((book) => (
+        {bookData.map((book) => (
           <Book
             image={book.image}
             title={book.title}
             author={book.author}
             id={book.id}
+            getBook={showBook}
             key={book.id}
           />
         ))}
