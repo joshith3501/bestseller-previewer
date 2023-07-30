@@ -1,6 +1,8 @@
 // import { useEffect } from "react";
 import Book from "./Book";
-
+import img1 from "../images/atmoic.jpg";
+import img2 from "../images/ikigai.jpg";
+import img3 from "../images/psychology.jpg";
 // interface Props {
 //   bookId : number
 // }
@@ -10,19 +12,19 @@ const BookList = () => {
 
   const bookData = [
     {
-      image: "./images/atmoic.jpg",
+      image: img1,
       title: "Atomic Habits",
       author: "James Clear",
       id: 1,
     },
     {
-      image: "./images/ikigai.jpg",
+      image: img2, 
       title: "Ikigai",
       author: "Francesc Miralles",
       id: 2,
     },
     {
-      image: "./images/psychology.jpg",
+      image: img3,
       title: "The Psychology Of Money",
       author: "Morgan Housel",
       id: 3,
