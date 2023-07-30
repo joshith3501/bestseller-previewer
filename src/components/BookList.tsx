@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import Book from "./Book";
 
-const BookList = () => {
+interface Props {
+  bookId : number
+}
+
+const BookList = ({bookId} : Props) => {
   // let filterValue = 0;
 
   const bookData = [
@@ -23,21 +28,18 @@ const BookList = () => {
       id: 3,
     },
   ];
+
+  let filteredData = bookData.filter((book) => book.id === bookId);
+  useEffect(() => {
+  console.log(bookData.find((book) => book.id === bookId));
+}, [bookId]);
+
+  if(filteredData.length === 0) filteredData = [...bookData];
+
   return (
     <>
-      {/* <section className="form-container">
-        <form className="form">
-          <input
-            type="number"
-            className="form-input"
-          />
-          <button type="submit" className="form-submit">
-            Submit
-          </button>
-        </form>
-      </section> */}
       <section className="book-list-container">
-        {bookData.map((book) => (
+        {filteredData.map((book) => (
           <Book
             image={book.image}
             title={book.title}
