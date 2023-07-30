@@ -23,19 +23,10 @@ const BookList = () => {
       id: 3,
     },
   ];
+
+
   return (
     <>
-      {/* <section className="form-container">
-        <form className="form">
-          <input
-            type="number"
-            className="form-input"
-          />
-          <button type="submit" className="form-submit">
-            Submit
-          </button>
-        </form>
-      </section> */}
       <section className="book-list-container">
         {bookData.map((book) => (
           <Book
@@ -43,6 +34,7 @@ const BookList = () => {
             title={book.title}
             author={book.author}
             id={book.id}
+            getBook={showBook}
             key={book.id}
           />
         ))}

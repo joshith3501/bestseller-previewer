@@ -1,7 +1,12 @@
 import "./App.css";
 import BookList from "./components/BookList";
+// import InputForm from "./components/InputForm";
 function App() {
-  return <BookList />;
+  return (
+    <>
+      <BookList />
+    </>
+  );
 }
 
 export default App;
